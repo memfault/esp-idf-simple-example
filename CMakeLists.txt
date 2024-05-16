@@ -2,5 +2,8 @@
 # in this exact order for cmake to work correctly
 cmake_minimum_required(VERSION 3.16)
 
+get_filename_component(memfault_firmware_sdk_dir third-party/memfault-firmware-sdk ABSOLUTE)
+include(${memfault_firmware_sdk_dir}/ports/esp_idf/memfault.cmake)
+
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(console)
